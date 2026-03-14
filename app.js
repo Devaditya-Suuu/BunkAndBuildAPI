@@ -17,7 +17,8 @@ app.use("/cgpaPredictor", cgpaPredictor);
 
 app.get("/", (req, res) => {
   res.json({
-    message: "welcome to engineering student api"
+    message: "welcome to engineering student api",
+    use_endpoints : "/excuse, /lastNight, /roast, /cgpaPredictor"
   });
 });
 
