@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const rateLimit = require("express-rate-limit");
 const excuseRoute = require("./routes/exuses");
 const lastNightRoute = require("./routes/lastNight");
 const roastRoute = require("./routes/roast");
@@ -10,10 +11,20 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/excuse", excuseRoute);
-app.use("/lastNight", lastNightRoute);
-app.use("/roast", roastRoute);
-app.use("/cgpaPredictor", cgpaPredictor);
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 100,
+  standardHeaders: "draft-8",
+  legacyHeaders: false,
+  message: {
+    error: "Too many requests. Please try again later."
+  }
+});
+
+app.use("/excuse", apiLimiter, excuseRoute);
+app.use("/lastNight", apiLimiter, lastNightRoute);
+app.use("/roast", apiLimiter, roastRoute);
+app.use("/cgpaPredictor", apiLimiter, cgpaPredictor);
 
 app.get("/", (req, res) => {
   res.json({
