@@ -1,5 +1,5 @@
 function predictcgpa(study, socialmedia, sleep) {
-  let base = 5;
+  let base = 6;
   base += study * 0.4;
   base -= socialmedia * 0.25;
   base += sleep * 0.1;
