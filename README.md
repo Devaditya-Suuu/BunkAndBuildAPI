@@ -6,6 +6,20 @@ A fun Express.js API for every engineering student mood:
 - friendly roasts
 - a silly CGPA predictor
 
+## Live API
+
+Hosted on Vercel:
+
+https://bunk-and-build-api.vercel.app
+
+Try it now:
+
+- https://bunk-and-build-api.vercel.app/
+- https://bunk-and-build-api.vercel.app/excuse
+- https://bunk-and-build-api.vercel.app/lastNight
+- https://bunk-and-build-api.vercel.app/roast
+- https://bunk-and-build-api.vercel.app/cgpaPredictor?study=6&socialmedia=2&sleep=7
+
 ## Features
 
 - Built with Express + CORS
