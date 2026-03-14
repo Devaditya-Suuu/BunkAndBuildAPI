@@ -23,10 +23,14 @@ A fun Express.js API for every engineering student mood:
 
 ```text
 engineering-student-api/
+├── api/
+│   └── index.js
+├── app.js
 ├── data/
 ├── generators/
 ├── routes/
 ├── server.js
+├── vercel.json
 └── package.json
 ```
 
@@ -48,6 +52,32 @@ Server runs on:
 
 ```text
 http://localhost:3000
+```
+
+## Deploy on Vercel
+
+This project is configured for Vercel serverless deployment.
+
+Files used for deployment:
+
+- `api/index.js` (Vercel serverless function entry)
+- `app.js` (Express app export)
+- `vercel.json` (rewrites all routes to the Express handler)
+
+### Deploy Steps
+
+1. Push this repo to GitHub.
+2. Go to Vercel and click **Add New Project**.
+3. Import this GitHub repository.
+4. Keep default settings and click **Deploy**.
+5. After deployment, test endpoints on your Vercel URL:
+
+```text
+https://your-project-name.vercel.app/
+https://your-project-name.vercel.app/excuse
+https://your-project-name.vercel.app/lastNight
+https://your-project-name.vercel.app/roast
+https://your-project-name.vercel.app/cgpaPredictor?study=6&socialmedia=2&sleep=7
 ```
 
 ## API Endpoints
